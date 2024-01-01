@@ -1,0 +1,30 @@
+{{#if  recipeSearchFail}}
+    <h1>Recipe Search Error</h1>
+{{else}}
+    <h1>Recipe for: {{recipe.name}}</h1>
+    <img src={{recipe.imgLink}} alt="Food Image">
+
+    <div id="ingredientsDiv">
+        <h2>Ingredients:</h2>
+        <ul class="ingredientList">
+            {{#each recipe.ingredients}}
+                <li>
+                    {{this.measures.us.amount}} - {{this.measures.us.unitLong}}: {{this.name}}
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+
+    <div id="instructionsDiv">
+        <h2>Instructions:</h2>
+        {{{recipe.instructions}}}
+    </div>
+
+    {{#if searched}}
+        <input type="button" id="saveButton" value="Save Recipe to CookBook">
+        <p id="resultDisp"></p>
+    {{/if}}
+
+{{/if}}
+
+<input type="button" id="backButton" value="Go Back">

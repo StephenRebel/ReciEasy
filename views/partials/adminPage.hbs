@@ -1,0 +1,56 @@
+{{#if failed}}
+    <h1>Admin Page Failure</h1>
+{{else}}
+    <h1>Admin Page</h1>
+
+    <div id="adminPage">
+        <div id="adminUserDiv">
+            <h2>{{userNum}} Users</h2>
+            <table>
+                <tr>
+                    <th>Username ID</th>
+                    <th>Password</th>
+                    <th>Access Level</th>
+                </tr>
+                {{#each userQuery}}
+                <tr>
+                    <td>{{this.user_id}}</td>
+                    <td>{{this.password}}</td>
+                    <td>{{this.role}}</td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+
+        <div id="adminRecipeDiv">
+            <h2>{{recipeNum}} Recipes</h2>
+            <table>
+                <tr>
+                    <th>Recipe Name</th>
+                    <th>Recipe ID</th>
+                    <th>Recipe Link</th>
+                </tr>
+                {{#each recipeQuery}}
+                <tr>
+                    <td>{{this.recipe_name}}</td>
+                    <td>{{this.recipe_id}}</td>
+                    <td><a href="/displayRecipe/{{this.recipe_id}}">View Recipe</a></td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+
+    <div id="deleteUserDiv">
+        <select name="user" id="deleteUserSelect">
+            {{#each userQuery}}
+                {{#ifNotEquals this.role 'master chef' this.user_id}}
+                    <option value="{{this}}" id="{{this}}">{{this}}</option>
+                {{/ifNotEquals}}
+            {{/each}}
+        </select>
+        <button id="deleteUserButton" type="button">Delete User</button>
+    </div>
+{{/if}}
+
+<input type="button" id="backButton" value="Go Back">

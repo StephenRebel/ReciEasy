@@ -1,0 +1,20 @@
+{
+  "name": "termproject-a5",
+  "version": "1.0.0",
+  "description": "Final project for COMP2406. It is a simple web app that will provide users access to request information from a database, and add to it. There will also be admin level access that can modify feature and have greater control. The server will use express to run.",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "author": "Stephen Rebel",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "hbs": "^4.2.0",
+    "serve-favicon": "^2.5.0",
+    "sqlite3": "^5.1.6"
+  }
+}

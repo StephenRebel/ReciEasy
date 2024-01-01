@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/styles/stylesMain.css">
+        <title>{{title}}</title>
+    </head>
+
+    <body>
+        <div id="pageHead">
+            <img src="/food.png" alt="Food Logo" style="width:150px;height:150px">
+            <h1 id="siteTitle">ReciEasy</h1>
+
+            <form method="POST" action="/logout">
+                <input type="hidden" name="blank" value="blank">
+                <button id="logoutButton" type="submit">Logout</button>
+            </form>
+        </div>
+        <hr>
+
+        {{#if page.dash}}
+            {{> dashboard}}
+        {{else if page.rSearch}}
+            {{> recipeSearch}}
+            {{{scriptPath}}}
+        {{else if page.vCookbook}}
+            {{> cookbookView}}
+            {{{scriptPath}}}
+        {{else if page.recipeDisp}}
+            {{> recipeDisplay}}
+            {{{scriptPath}}}
+        {{else if page.cookbookR}}
+            {{> cookbookRecipes}}
+            {{{scriptPath}}}
+        {{else if page.adminPg}}
+            {{> adminPage}}
+            {{{scriptPath}}}
+        {{/if}}
+
+    </body>
+</html>

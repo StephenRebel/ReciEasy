@@ -1,0 +1,15 @@
+{{#if failed}}
+    <h1>Cookbook Recipe Search Failure</h1>
+{{else}}
+    <h1>Cookbook Recipes</h1>
+
+    <div class="recipesDiv">
+        {{#each recipes}}
+            <div class="recipeLink">
+                <p><a href="/displayRecipe/{{this.recipe_id}}">{{this.recipe_name}}</a></p>
+            </div>
+        {{/each}}
+    </div>
+{{/if}}
+
+<input type="button" id="backButton" value="Go Back">

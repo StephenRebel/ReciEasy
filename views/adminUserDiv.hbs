@@ -1,0 +1,15 @@
+<h2>{{userNum}} Users</h2>
+    <table>
+        <tr>
+            <th>Username ID</th>
+            <th>Password</th>
+            <th>Access Level</th>
+        </tr>
+    {{#each userQuery}}
+        <tr>
+            <td>{{this.user_id}}</td>
+            <td>{{this.password}}</td>
+            <td>{{this.role}}</td>
+        </tr>
+    {{/each}}
+</table>

@@ -1,0 +1,16 @@
+<h1>Welcome {{user}}</h1>
+<div id="content">
+    <div id="recipeSearchDiv">
+        <p><a href="/searchRecipes">Search For Recipes</a></p>
+    </div>
+
+    <div id="cookbookDiv">
+        <p><a href="/cookbooks">View {{user}}'s Cookbooks</a></p>
+    </div>
+
+    {{#if admin}}
+        <div id="adminDiv">
+            <p><a href="/adminPage">Welcome Master Chef (AdminPage)</a></p>
+        </div>
+    {{/if}}
+</div>

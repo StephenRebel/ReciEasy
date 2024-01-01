@@ -1,0 +1,33 @@
+<!-- Oringinal page idea and layout sourced from: https://medium.com/swlh/how-to-create-your-first-login-page-with-html-css-and-javascript-602dd71144f1 -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="\styles\stylesAuth.css">
+        <title> {{title}} </title>
+    </head>
+
+    <body>
+        <main>
+            <h1 id="loginHeader">{{header}}</h1>
+
+            <img src="/cloud.png" alt="Grey Cloud" style="width:40%;height:60%">
+
+            <div id="loginError">
+                <p id="errorMsg">Invalid Login <span id="errorMsg2">Reinput your credentials</span></p>
+            </div>
+
+            <form id="loginForm">
+                {{#if useLogin}}
+                    {{> loginForm}}
+                {{else}}
+                    {{> registrationForm}}
+                {{/if}}
+            </form>
+
+        </main>
+
+        {{{scriptPath}}}
+
+    </body>
+</html>
